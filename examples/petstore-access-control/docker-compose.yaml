@@ -31,4 +31,4 @@ services:
     volumes:
       - ./data/petstore-access-control/db:/data/db
     ports:
-      - "12345:27017"
+      - "27017:27017"
