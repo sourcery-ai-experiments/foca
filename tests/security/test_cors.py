@@ -7,10 +7,10 @@ from flask import Flask
 from unittest.mock import patch
 
 
-@patch('flask_cors.CORS')
+@patch('foca.security.cors.CORS')
 def test_enable_cors(test_patch):
     """Test that CORS is called with app as a parameter
     """
     app = Flask(__name__)
     assert enable_cors(app) is None
-    assert test_patch.called_with(app)
+    test_patch.assert_called_with(app)
